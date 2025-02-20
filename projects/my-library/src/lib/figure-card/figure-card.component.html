@@ -1,13 +1,13 @@
 <div class="content">
-    <div *ngFor="let img of imgs" class="cards">
-      <a [href]="img.redirect">
-        <div class="card">
-          <div class="wrapper">
-            <img [src]="img.cover" class="cover-image" />
-          </div>
-          <img [src]="img.title" class="title" />
-          <img [src]="img.object3D" class="character" />
+  <div *ngFor="let img of imgs" class="cards">
+    <a [href]="img.redirect">
+      <div class="card">
+        <div class="wrapper">
+          <img [src]="img.cover" class="cover-image" />
         </div>
-      </a>
-    </div>
+        <img [src]="img.title" class="title" />
+        <img [src]="img.object3D" class="character" />
+      </div>
+    </a>
   </div>
+</div>

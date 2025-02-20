@@ -3,18 +3,26 @@
     --card-width: calc(var(--card-height) / 1.5);
 }
 
-* {
-    box-sizing: border-box;
-}
-
-.content {
+/* working */
+/* .content {
     height: 100vh;
-    margin: 0;
     display: flex;
     justify-content: space-evenly;
-    align-items: flex-end;
-    background: white;
+    align-items: center;
     flex-wrap: wrap;
+} */
+
+/* testing */
+.content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    gap: 10em;
+    padding: 24px;
+    margin: 24px;
 }
 
 .card {
@@ -22,7 +30,7 @@
     width: 200px;
     display: flex;
     justify-content: space-evenly;
-    align-items: flex-end;
+    align-items: end;
     padding: 0 36px;
     perspective: 2500px;
     margin: 0 50px;
@@ -30,8 +38,8 @@
 }
 
 .cover-image {
-    width: 100%;
-    height: 100%;
+    width: 270px;
+    height: 270px;
     object-fit: cover;
     border-radius: 5px;
 }
@@ -39,9 +47,10 @@
 .wrapper {
     transition: all 0.5s;
     position: absolute;
-    width: 100%;
+    width: auto;
     z-index: -1;
     border-radius: 5px;
+    display: flex;
 }
 
 .card:hover .wrapper {
@@ -57,7 +66,7 @@
     content: "";
     opacity: 0;
     width: 100%;
-    height: 80px;
+    height: auto;
     transition: all 0.5s;
     position: absolute;
     left: 0;
@@ -67,20 +76,14 @@
 .wrapper::before {
     top: 0;
     height: 100%;
-    background-image: linear-gradient(to top,
-            transparent 46%,
-            rgba(12, 13, 19, 0.5)68%,
-            rgba(12, 13, 19) 97%);
+    background-image: linear-gradient(to top, transparent 46%, rgba(12, 13, 19, 0.5)68%, rgba(12, 13, 19) 97%);
     border-radius: 5px;
 }
 
 .wrapper::after {
     bottom: 0;
     opacity: 1;
-    background-image: linear-gradient(to bottom,
-            transparent 46%,
-            rgba(12, 13, 19, 0.5) 68%,
-            rgba(12, 13, 19)97%);
+    background-image: linear-gradient(to bottom, transparent 46%, rgba(12, 13, 19, 0.5) 68%, rgba(12, 13, 19)97%);
     border-radius: 5px;
 }
 
@@ -94,8 +97,11 @@
 }
 
 .title {
-    width: 100%;
+    width: auto;
     transition: transform 0.5s;
+    filter: drop-shadow(0.5px 0.5px 0 pink) drop-shadow(-0.5px -0.5px 0 pink);
+    height: 30%;
+    opacity: 60%;
 }
 
 .card:hover .title {
@@ -104,6 +110,7 @@
 
 .character {
     width: 100%;
+    height: auto;
     opacity: 0;
     transition: all 0.5s;
     position: absolute;
@@ -112,5 +119,6 @@
 
 .card:hover .character {
     opacity: 1;
-    transform: translate3d(0%, -30%, 100px);
+    transform: translate3d(0%, -50%, 10em);
+    z-index: 9;
 }
